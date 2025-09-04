@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 
-def constructBoard(rows,count):
-    board = [''] * rows
-    for i in range (rows):
-        board[i] = '|' * count[i]
-    return board
+class Board :
+    def __init__(self,rows,count):
+        self.rows = rows
+        self.board = [''] * rows
+        for i in range (rows):
+            self.board[i] = '|' * count[i]
 
-def displayBoard(board):
-    for row in board:
-        print(row)
+    def displayBoard(self):
+        for row in self.board:
+            print(row)
 
-def updateBoard(board,removeRow,removeCount):
-    board[removeRow] = '|' * max(0, board[removeRow].count('|') - removeCount)
-    return board
-
+    def updateBoard(self,removeRow,removeCount):
+        self.board[removeRow] = '|' * max(0, self.board[removeRow].count('|') - removeCount)
+        return self.board
 
 if __name__ == "__main__":
     pass
